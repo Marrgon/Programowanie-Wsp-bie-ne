@@ -4,4 +4,4 @@
 
 | Name Surname (initials) | GUID                                     |
 | ----------------------- | ---------------------------------------- |
-| Michał Pianka           | `{FD9D086C-532F-4AAC-BB99-69D7798837D8}` |
+| Michał Pianka           | `{8df41639-754a-4548-b7d8-bdb5715a9cf0}` |
