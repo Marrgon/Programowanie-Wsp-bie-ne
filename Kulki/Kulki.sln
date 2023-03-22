@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kulki", "Kulki\Kulki.csproj", "{46CA4CF3-8016-4CB0-AE00-286FDBDDA66D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTests", "BankTests\BankTests.csproj", "{19B4D26C-16CD-43B4-8762-A18B27AB85EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CA4CF3-8016-4CB0-AE00-286FDBDDA66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CA4CF3-8016-4CB0-AE00-286FDBDDA66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CA4CF3-8016-4CB0-AE00-286FDBDDA66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CA4CF3-8016-4CB0-AE00-286FDBDDA66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B4D26C-16CD-43B4-8762-A18B27AB85EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B4D26C-16CD-43B4-8762-A18B27AB85EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B4D26C-16CD-43B4-8762-A18B27AB85EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B4D26C-16CD-43B4-8762-A18B27AB85EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FBD151B4-418E-4809-8C71-053EF9F77A4A}
+	EndGlobalSection
+EndGlobal

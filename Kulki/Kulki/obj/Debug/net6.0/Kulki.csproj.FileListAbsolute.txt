@@ -1,0 +1,15 @@
+D:\wspolbiezne\Kulki\Kulki\bin\Debug\net6.0\Kulki.exe
+D:\wspolbiezne\Kulki\Kulki\bin\Debug\net6.0\Kulki.deps.json
+D:\wspolbiezne\Kulki\Kulki\bin\Debug\net6.0\Kulki.runtimeconfig.json
+D:\wspolbiezne\Kulki\Kulki\bin\Debug\net6.0\Kulki.dll
+D:\wspolbiezne\Kulki\Kulki\bin\Debug\net6.0\Kulki.pdb
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.csproj.AssemblyReference.cache
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.GeneratedMSBuildEditorConfig.editorconfig
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.AssemblyInfoInputs.cache
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.AssemblyInfo.cs
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.csproj.CoreCompileInputs.cache
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.dll
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\refint\Kulki.dll
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.pdb
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\Kulki.genruntimeconfig.cache
+D:\wspolbiezne\Kulki\Kulki\obj\Debug\net6.0\ref\Kulki.dll
