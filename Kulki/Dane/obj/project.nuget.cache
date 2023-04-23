@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UshG5tboN3bB9ABW9/Jvg9hfEd8YxW0qN/I/mmVoelI2ZxaKDeaTi0VE8jDTJt0/GHTxsQ+8sL5W90YAysA7pA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP.LAPTOP-P2E92RRS\\Desktop\\Programowanie-Wspobiezne\\Kulki\\Dane\\Dane.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

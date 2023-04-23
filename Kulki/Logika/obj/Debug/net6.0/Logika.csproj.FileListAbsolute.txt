@@ -1,0 +1,15 @@
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\bin\Debug\net6.0\Logika.deps.json
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\bin\Debug\net6.0\Logika.dll
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\bin\Debug\net6.0\Logika.pdb
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.csproj.AssemblyReference.cache
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.AssemblyInfoInputs.cache
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.AssemblyInfo.cs
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.csproj.CoreCompileInputs.cache
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.dll
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\refint\Logika.dll
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.pdb
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\ref\Logika.dll
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\bin\Debug\net6.0\Dane.dll
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\bin\Debug\net6.0\Dane.pdb
+C:\Users\HP.LAPTOP-P2E92RRS\Desktop\Programowanie-Wspobiezne\Kulki\Logika\obj\Debug\net6.0\Logika.csproj.CopyComplete

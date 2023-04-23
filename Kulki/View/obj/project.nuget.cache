@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5eXHZT3jwVj/iOiVJYwhUzxpOKejhp56iGc1AvdjnO3r2IHdqvd1psjAMJv9DjD/ofJ6SSQn4IGGo7nravVTtQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP.LAPTOP-P2E92RRS\\Desktop\\Programowanie-Wspobiezne\\Kulki\\View\\View.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

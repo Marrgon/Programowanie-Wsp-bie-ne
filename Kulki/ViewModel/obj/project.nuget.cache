@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "G9CI9JxMPH7yrQhUqMIv/xRhD4zWQN1wWlSk99rVBB/YyTwvLPRvF/IfxnsWVOOwcbpmHOXFywsjwzdjcFzf4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP.LAPTOP-P2E92RRS\\Desktop\\Programowanie-Wspobiezne\\Kulki\\ViewModel\\ViewModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\HP.LAPTOP-P2E92RRS\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

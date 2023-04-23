@@ -1,0 +1,61 @@
+﻿<Window x:Class="TPW.Presentation.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TPW.Presentation.ViewModel;assembly=ViewModel"
+        mc:Ignorable="d"
+		
+        Title="Kulki"
+        Height="450"
+        Width="800"
+		Background="black" Foreground="black"
+		FontSize="14"
+        d:DesignHeight="450"
+        d:DesignWidth="800"
+        ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Height="400" Width="90" Background="#CCCCCC">
+
+
+
+            <Button Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding StartSimulationButton}"/>
+            <Label Content="Dodaj kulki" VerticalAlignment="Center" Foreground="#000000"/>
+            <TextBox Text="{Binding numberOfBalls}" AcceptsReturn="True" Name="InputText" TextWrapping="Wrap" MaxHeight="172" Width="52" ScrollViewer.VerticalScrollBarVisibility="Auto" Canvas.Left="266" Canvas.Top="517" />
+            <Button Content="Stop" HorizontalAlignment="Center"
+                    Command="{Binding StopSimulationButton}" Click="Button_Click" VerticalAlignment="Center"/>
+            
+
+        </StackPanel>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" >
+            <Canvas x:Name="BallCanvas" Height="350" Width="600" Background="#008000">
+                <Border BorderBrush="#993300" BorderThickness="1" Height="350" Width="600"/>
+
+                <ItemsControl ItemsSource="{Binding Path = Circles}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate >
+                            <Canvas>
+                                <Ellipse Width="20" Height="20" Fill="red" Stroke="black" StrokeThickness="2">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform X="{Binding X}" Y="{Binding Y}"/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Canvas>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </Canvas>
+        </StackPanel>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="300,359,0,0" VerticalAlignment="Top" Width="6"/>
+    </Grid>
+</Window>
