@@ -4,19 +4,23 @@ using TPW.Dane;
 namespace DaneTest
 {
     public class Tests
-
     {
-        
+        DaneAPI api;
         [SetUp]
         public void Setup()
         {
-            DaneAPI.CreateDataBall();
+            api = DaneAPI.CreateDataBall();
         }
 
         [Test]
-        public void Test1()
+        public void AddBallsAndStart()
         {
-            Assert.Pass();
+            api.CreateBalls(1);
+            Assert.AreEqual(1, api.GetBallsCount());
+            var startPosition = api.GetPositionBall(1);
+
+            Assert.AreEqual(startPosition, api.GetPositionBall(1));
         }
     }
+
 }

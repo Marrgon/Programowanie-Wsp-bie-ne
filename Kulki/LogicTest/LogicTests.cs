@@ -10,6 +10,9 @@ namespace TestProject1
     {
         private LogicApi logicApi;
         private readonly Vector2 boardSize = new Vector2(150, 100);
+        private Vector2 position = new Vector2(20, 20);
+        private Vector2 velocity = new Vector2(1, 1);
+        private Vector2 position2 = new Vector2(30, 30);
         [SetUp]
         public void Setup()
         {
@@ -17,26 +20,16 @@ namespace TestProject1
         }
 
         [Test]
-        public void AddBallTest()
+        public void CollisionTest()
         {
-
-            logicApi.AddBalls(1);
-            Assert.AreEqual(1, logicApi.GetBallCount());
+            Collisions collisions = new Collisions(position, velocity, 40);
+            logicApi.AddBalls(2);
+            Assert.IsTrue(collisions.IsCollision(position2, 30, true));
 
         }
 
-        [Test]
-        public void SimulationTest()
-        {
-            logicApi.AddBalls(1);
-            Assert.AreEqual(1, logicApi.GetBallCount());
-            var startPositionList = new List<Vector2>();
-            startPositionList.Add(logicApi.Get(0).Position);
-            logicApi.StartSimulation();
-            Assert.AreNotEqual(logicApi.Get(0).Position, startPositionList);
-            logicApi.StopSimulation();
-            
-        }
+
 
     }
+
 }

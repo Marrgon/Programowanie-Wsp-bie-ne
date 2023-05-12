@@ -15,7 +15,7 @@ namespace TPW.Presentation.View
     {
         public MainWindow()
         {
-            
+            InitializeComponent();
         }
 
        
