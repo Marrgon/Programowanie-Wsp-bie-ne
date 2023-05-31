@@ -1,81 +1,107 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
 
 namespace TPW.Dane
 {
-
     public class Ball : IObservable<int>
     {
         public Vector2 Position { get; set; }
         public Vector2 Velocity { get; set; }
         public int id;
         private Task BallTask;
+        private Stopwatch Timer = new Stopwatch();
         internal readonly IList<IObserver<int>> observers;
+        public Logger logger;
+        private readonly object lockObject = new object();
 
         public Ball(int id)
         {
             this.id = id;
             this.Position = GetRandomPointInsideBoard();
             var rng = new Random();
-            var x = (float)(rng.NextDouble() - 0.5) * 1;
-            var y = (float)(rng.NextDouble() - 0.5) * 1;
+            var x = (float)(rng.NextDouble() * 0.03) * 1;
+            var y = (float)(rng.NextDouble() * 0.03) * 1;
             var result = new Vector2(x, y);
             Velocity = result;
             observers = new List<IObserver<int>>();
-
         }
 
         private Vector2 GetRandomPointInsideBoard()
         {
             var rng = new Random();
-            var x = rng.Next(40, (int)(600 - 40));
-            var y = rng.Next(40, (int)(350 - 40));
+            var x = rng.Next(40, (int)(650 - 40));
+            var y = rng.Next(40, (int)(400 - 40));
 
             return new Vector2(x, y);
         }
+
         public void StartMoving()
         {
             this.BallTask = new Task(Simulate);
             BallTask.Start();
         }
+
         public void Simulate()
         {
             while (true)
             {
-                Position = GetNextPosition();
+                Timer.Restart();
+                Timer.Start();
+                Position = GetNextPosition(Timer.ElapsedMilliseconds);
+                BallLog();
 
-
-                foreach (var observer in observers.ToList())
+                lock (lockObject)
                 {
-
-                    if (observer != null)
+                    foreach (var observer in observers.ToList())
                     {
-
-                        observer.OnNext(id);
+                        if (observer != null)
+                        {
+                            observer.OnNext(id);
+                        }
                     }
                 }
-                System.Threading.Thread.Sleep(1);
 
+                Timer.Stop();
             }
         }
-        private Vector2 GetNextPosition()
-        {
 
-            Vector2 newPosition = Position + Velocity;
-            Vector2 newPosition2 = Velocity;
-            return Position + newPosition2;
+        public void BallLog()
+        {
+            lock (lockObject)
+            {
+                logger.Log(this);
+            }
         }
 
+        private Vector2 GetNextPosition(long timeInMs)
+        {
+            Vector2 newPosition;
+
+            if (timeInMs > 0)
+            {
+                newPosition = Position + Velocity * timeInMs;
+            }
+            else
+            {
+                newPosition = Position + Velocity;
+            }
+            return newPosition;
+        }
 
         #region provider
 
         public IDisposable Subscribe(IObserver<int> observer)
         {
-            if (!observers.Contains(observer))
-                observers.Add(observer);
+            lock (lockObject)
+            {
+                if (!observers.Contains(observer))
+                    observers.Add(observer);
+            }
             return new Unsubscriber(observers, observer);
         }
 
@@ -84,8 +110,7 @@ namespace TPW.Dane
             private IList<IObserver<int>> _observers;
             private IObserver<int> _observer;
 
-            public Unsubscriber
-            (IList<IObserver<int>> observers, IObserver<int> observer)
+            public Unsubscriber(IList<IObserver<int>> observers, IObserver<int> observer)
             {
                 _observers = observers;
                 _observer = observer;
