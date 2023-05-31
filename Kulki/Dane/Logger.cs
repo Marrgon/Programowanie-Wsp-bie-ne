@@ -1,8 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -10,18 +9,24 @@ namespace TPW.Dane
 {
     public class Logger : IDisposable
     {
-        BlockingCollection<Ball> FirstInFirstOut;
-        StreamWriter streamWriter;
-        string filename = "Logger.json";
+        private BlockingCollection<Ball> FirstInFirstOut;
+        private StreamWriter streamWriter;
+        private string filename = "Logger.json";
+        private bool isFlushing = false;
+        private Timer timer;
 
-        private void endlessLoop()
+        private readonly ConcurrentQueue<string> logQueue;
+
+        private readonly object lockObj = new object(); // Obiekt blokujący
+
+        private void EndlessLoop()
         {
             try
             {
                 foreach (Ball ball in FirstInFirstOut.GetConsumingEnumerable())
                 {
                     string json = JsonConvert.SerializeObject(ball);
-                    streamWriter.WriteLine(json);
+                    streamWriter.WriteLine($"{DateTime.Now}: {json}");
                 }
             }
             finally
@@ -40,16 +45,47 @@ namespace TPW.Dane
             {
                 streamWriter = new StreamWriter(filename, true);
             }
+
             FirstInFirstOut = new BlockingCollection<Ball>();
-            Task.Run(endlessLoop);
+
+            Task.Run(EndlessLoop);
+
+            logQueue = new ConcurrentQueue<string>();
+
+            // Ustawienie timera na wywoływanie metody FlushQueue() co 1 sekundę
+            timer = new Timer(FlushQueue, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
         }
 
-        public void Log(Ball ball) => FirstInFirstOut.Add(ball);
+        public void Log(Ball ball)
+        {
+            string json = JsonConvert.SerializeObject(ball);
+            string logEntry = $"{DateTime.Now}: {json}";
+            logQueue.Enqueue(logEntry);
+        }
+
+        private void FlushQueue(object state)
+        {
+            if (!isFlushing)
+            {
+                isFlushing = true;
+
+                while (logQueue.TryDequeue(out string logEntry))
+                {
+                    streamWriter.WriteLine(logEntry);
+                }
+
+                streamWriter.Flush();
+
+                isFlushing = false;
+            }
+        }
 
         public void Dispose()
         {
+            timer.Dispose();
             streamWriter.Dispose();
             FirstInFirstOut.Dispose();
         }
     }
 }
+
